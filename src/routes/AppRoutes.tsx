@@ -27,6 +27,8 @@ import ApplyJob from '../pages/candidate/ApplyJob';
 import CandidateProfile from '../pages/candidate/ProfilePage';
 import CandidateApplications from '../pages/candidate/ApplicationsPage';
 import CandidateInterviewsPage from '../pages/candidate/InterviewsPage';
+import InterviewScreen from '../pages/candidate/InterviewScreen';
+import InterviewDemoPage from '../pages/candidate/InterviewDemoPage';
 
 // Placeholder components for missing routes
 
@@ -213,6 +215,14 @@ const AppRoutes: React.FC = () => {
           )
         },
         {
+          path: 'candidate/interview-demo',
+          element: (
+            <ProtectedRoute requiredRole="candidate">
+              <InterviewDemoPage />
+            </ProtectedRoute>
+          )
+        },
+        {
           path: 'candidate/jobs',
           element: (
             <ProtectedRoute requiredRole="candidate">
@@ -249,6 +259,22 @@ const AppRoutes: React.FC = () => {
           element: (
             <ProtectedRoute requiredRole="candidate">
               <CandidateInterviewsPage />
+            </ProtectedRoute>
+          )
+        },
+        {
+          path: 'candidate/interview/:sessionId?',
+          element: (
+            <ProtectedRoute requiredRole="candidate">
+              <InterviewScreen />
+            </ProtectedRoute>
+          )
+        },
+        {
+          path: 'candidate/interview-complete',
+          element: (
+            <ProtectedRoute requiredRole="candidate">
+              <div className="p-6"><h2 className="text-2xl font-bold">Interview Complete</h2><p className="text-gray-600">Thank you for completing the interview!</p></div>
             </ProtectedRoute>
           )
         },

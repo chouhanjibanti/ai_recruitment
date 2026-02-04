@@ -1,4 +1,3 @@
-hy i am doing this 
 # AI Recruitment Dashboard
 
 A comprehensive React TypeScript application for managing recruitment processes with role-based access control for Admin, Recruiter, and Candidate roles.

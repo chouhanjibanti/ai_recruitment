@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Briefcase, FileText, Calendar, CheckCircle, Clock, TrendingUp, User } from 'lucide-react';
+import { Briefcase, FileText, Calendar, CheckCircle, Clock, TrendingUp, User, Mic, Play, ArrowRight } from 'lucide-react';
 
 const CandidateDashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -190,6 +190,66 @@ const CandidateDashboard: React.FC = () => {
             </div>
           );
         })}
+      </div>
+
+      {/* AI Interview Avatar Section */}
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg shadow-xl p-8 text-white">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <div className="flex items-center mb-4">
+              <Mic className="w-8 h-8 mr-3" />
+              <h2 className="text-2xl font-bold">AI Interview Avatar</h2>
+            </div>
+            <p className="text-lg mb-6 text-blue-100">
+              Practice your interview skills with our AI-powered interviewer. Get real-time feedback and improve your performance.
+            </p>
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center">
+                <CheckCircle className="w-5 h-5 mr-2" />
+                <span>Natural conversation experience</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="w-5 h-5 mr-2" />
+                <span>Real-time speech recognition</span>
+              </div>
+              <div className="flex items-center">
+                <CheckCircle className="w-5 h-5 mr-2" />
+                <span>Instant feedback and evaluation</span>
+              </div>
+            </div>
+            <div className="flex space-x-4">
+              <button
+                onClick={() => navigate('/candidate/interview-demo')}
+                className="flex items-center px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors"
+              >
+                <Play className="w-5 h-5 mr-2" />
+                Try Demo
+              </button>
+              <button
+                onClick={() => navigate('/candidate/interview')}
+                className="flex items-center px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg hover:bg-blue-800 transition-colors"
+              >
+                Start Interview
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </button>
+            </div>
+          </div>
+          <div className="flex justify-center">
+            <div className="relative">
+              <div className="w-48 h-48 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                <div className="w-32 h-32 bg-white bg-opacity-30 rounded-full flex items-center justify-center">
+                  <div className="text-center">
+                    <Mic className="w-12 h-12 mx-auto mb-2" />
+                    <p className="text-sm font-medium">AI Avatar</p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center animate-pulse">
+                <div className="w-3 h-3 bg-white rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
