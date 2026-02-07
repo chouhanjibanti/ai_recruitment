@@ -9,7 +9,9 @@ import {
   FileText, 
   Settings,
   User,
-  GraduationCap
+  GraduationCap,
+  Database,
+  Video
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -39,6 +41,8 @@ const Sidebar: React.FC<SidebarProps> = ({ userRole }) => {
           { to: '/recruiter/candidates', label: 'Candidates', icon: Users },
           { to: '/recruiter/interviews', label: 'Interviews', icon: Calendar },
           { to: '/recruiter/pipelines', label: 'Pipelines', icon: LayoutDashboard },
+          { to: '/recruiter/resume-dashboard', label: 'Resume DB', icon: Database },
+          { to: '/recruiter/interview-dashboard', label: 'Interview DB', icon: Video },
           { to: '/recruiter/reports', label: 'Reports', icon: FileText },
         ];
       case 'candidate':

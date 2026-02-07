@@ -27,6 +27,10 @@ import ApplyJob from '../pages/candidate/ApplyJob';
 import CandidateProfile from '../pages/candidate/ProfilePage';
 import CandidateApplications from '../pages/candidate/ApplicationsPage';
 import CandidateInterviewsPage from '../pages/candidate/InterviewsPage';
+import InterviewScreen from '../pages/candidate/InterviewScreen';
+import InterviewDemoPage from '../pages/candidate/InterviewDemoPage';
+import ResumeDashboard from '../pages/recruiter/ResumeDashboard';
+import InterviewDashboard from '../pages/recruiter/InterviewDashboard';
 
 // Placeholder components for missing routes
 
@@ -188,6 +192,22 @@ const AppRoutes: React.FC = () => {
           )
         },
         {
+          path: 'recruiter/resume-dashboard',
+          element: (
+            <ProtectedRoute requiredRole="recruiter">
+              <ResumeDashboard />
+            </ProtectedRoute>
+          )
+        },
+        {
+          path: 'recruiter/interview-dashboard',
+          element: (
+            <ProtectedRoute requiredRole="recruiter">
+              <InterviewDashboard />
+            </ProtectedRoute>
+          )
+        },
+        {
           path: 'recruiter/profile',
           element: (
             <ProtectedRoute requiredRole="recruiter">
@@ -209,6 +229,14 @@ const AppRoutes: React.FC = () => {
           element: (
             <ProtectedRoute requiredRole="candidate">
               <CandidateDashboard />
+            </ProtectedRoute>
+          )
+        },
+        {
+          path: 'candidate/interview-demo',
+          element: (
+            <ProtectedRoute requiredRole="candidate">
+              <InterviewDemoPage />
             </ProtectedRoute>
           )
         },
@@ -249,6 +277,22 @@ const AppRoutes: React.FC = () => {
           element: (
             <ProtectedRoute requiredRole="candidate">
               <CandidateInterviewsPage />
+            </ProtectedRoute>
+          )
+        },
+        {
+          path: 'candidate/interview/:sessionId?',
+          element: (
+            <ProtectedRoute requiredRole="candidate">
+              <InterviewScreen />
+            </ProtectedRoute>
+          )
+        },
+        {
+          path: 'candidate/interview-complete',
+          element: (
+            <ProtectedRoute requiredRole="candidate">
+              <div className="p-6"><h2 className="text-2xl font-bold">Interview Complete</h2><p className="text-gray-600">Thank you for completing the interview!</p></div>
             </ProtectedRoute>
           )
         },
