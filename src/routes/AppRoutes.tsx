@@ -29,6 +29,8 @@ import CandidateApplications from '../pages/candidate/ApplicationsPage';
 import CandidateInterviewsPage from '../pages/candidate/InterviewsPage';
 import InterviewScreen from '../pages/candidate/InterviewScreen';
 import InterviewDemoPage from '../pages/candidate/InterviewDemoPage';
+import ResumeDashboard from '../pages/recruiter/ResumeDashboard';
+import InterviewDashboard from '../pages/recruiter/InterviewDashboard';
 
 // Placeholder components for missing routes
 
@@ -186,6 +188,22 @@ const AppRoutes: React.FC = () => {
           element: (
             <ProtectedRoute requiredRole="recruiter">
               <ReportsPage />
+            </ProtectedRoute>
+          )
+        },
+        {
+          path: 'recruiter/resume-dashboard',
+          element: (
+            <ProtectedRoute requiredRole="recruiter">
+              <ResumeDashboard />
+            </ProtectedRoute>
+          )
+        },
+        {
+          path: 'recruiter/interview-dashboard',
+          element: (
+            <ProtectedRoute requiredRole="recruiter">
+              <InterviewDashboard />
             </ProtectedRoute>
           )
         },
